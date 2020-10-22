@@ -1,0 +1,52 @@
+<div class="container-fluid px-0">
+  <!-- <app-loading></app-loading> -->
+  <nav class="navbar text-white bg-primary p-5">
+    <h1>Logo</h1>
+    <div class="my-1">
+      <p class="mb-0">User</p>
+    </div>
+  </nav>
+  <div style="display:flex;" *ngIf="retryButton">
+    <button class="btn btn-primary btn-lg mx-auto m-5" (click)="reloadData()">Retry</button>
+  </div>
+  <div class="table-responsive data-table">
+    <h1 class="px-5 pt-5">Lender Maintenance</h1>
+    <div class="p-5 tableFixHead">
+      <table class="table table-striped table-hover mb-5">
+        <thead class="bg-white">
+          <tr class="border-0">
+            <th scope="col" *ngFor="let item of tableHeaders" class="text-center">
+              <span [ngStyle]="{'width': (item === 'Commission') ? '15%' : '12.5%'}">{{item}}</span>
+              <div *ngIf="item === 'Commission'" class="row">
+                <span class="col">Upfront</span>
+                <span class="col">Trail High</span>
+                <span class="col">Trail Low</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="datatable-body shadow">
+          <tr *ngFor="let item of lendersData" class="text-center">
+            <th scope="col">{{item.code}}</th>
+            <td scope="col" >{{item.name}}</td>
+            <td scope="col" >{{item.type}}</td>
+            <td class="row" scope="col" style="width: 115%;">
+              <span class="col">{{item.upfont_commission}}</span>
+              <span class="col">{{item.high_trail_commission}}</span>
+              <span class="col">{{item.low_trail_commission}}</span>
+          </td>
+            <td scope="col" >{{item.balance_multiplier}}</td>
+            <td scope="col" >
+              <input type="checkbox" [checked]="item.is_active" disabled>
+            </td>
+            <td scope="col" >
+              <input type="checkbox" [checked]="item.is_hidden" disabled>
+            </td>
+            <td scope="col" >Edit</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
