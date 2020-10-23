@@ -1,6 +1,7 @@
-#Explaination
 
-For the http request, my previous experience was organising the apis in one place, to check the conditions, I haven't done it in here(not sure how to deal with the JSON file), I comment the explainations of this axios request, those function code all work:
+#Explanation
+
+For the HTTP request, my previous experience was organizing the APIs in one place, to check the conditions, I haven't done it in here(not sure how to deal with the JSON file), I comment on the explanations of this Axios request, those function code all work:
 
 //These are the explainations of challenges
 // axios.get('/user?ID=12345')
@@ -17,7 +18,7 @@ For the http request, my previous experience was organising the apis in one plac
 //   });
 For better code management, we should put 'loading server' and 'jsons server' to the shared folder, but I haven't done it yet.
 
-Haven't implemented the gradient of header, and all images.
+Haven't implemented the gradient of the header, and all images.
 
 # Ng5
 
