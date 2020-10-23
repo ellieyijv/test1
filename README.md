@@ -1,3 +1,24 @@
+#Explaination
+
+For the http request, my previous experience was organising the apis in one place, to check the conditions, I haven't done it in here(not sure how to deal with the JSON file), I comment the explainations of this axios request, those function code all work:
+
+//These are the explainations of challenges
+// axios.get('/user?ID=12345')
+//   .then(function (response) {
+//      this.loadData()
+//   })
+//   .catch(function (error) {
+//      //show the retry button
+//      this.retryButton = ture;
+//   })
+//   .then(function () {
+//      //stop loading, no matter the situations, all stop the loading spinner
+//      this.loadingService.requestEnded()
+//   });
+For better code management, we should put 'loading server' and 'jsons server' to the shared folder, but I haven't done it yet.
+
+Haven't implemented the gradient of header, and all images.
+
 # Ng5
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
