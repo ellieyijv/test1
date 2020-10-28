@@ -1,0 +1,55 @@
+.data-table {
+  background-color: white;
+  width: 96%;
+  margin: 3rem auto;
+
+  h1 {
+    color: green;
+  }
+
+  thead {
+    font-size: 1rem;
+    color: grey;
+  }
+}
+
+.table thead th {
+  vertical-align: top;
+}
+
+.tableFixHead tbody {
+  display: block;
+  height:30vh;
+  overflow-y:scroll;
+}
+table thead,
+tbody tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+table tr td:nth-child(2),
+tr td:nth-child(4) {
+  width: 25%;
+}
+tr td:nth-child(3) {
+  width:12%;
+}
+
+td+td {
+  width: auto;
+}
+// table thead {
+//     width: calc(100% - 1em)
+// }
+
+
+@media (min-width: 1980px) {
+  .tableFixHead tbody {
+    height:50vh;
+  }
+  thead {
+    font-size: 1.2rem;
+  }
+}
+
