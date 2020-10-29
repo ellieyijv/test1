@@ -9,13 +9,13 @@
   <div style="display:flex;" *ngIf="retryButton">
     <button class="btn btn-primary btn-lg mx-auto m-5" (click)="reloadData()">Retry</button>
   </div>
-  <div class="table-responsive data-table">
-    <h1 class="px-5 pt-5">Lender Maintenance</h1>
+  <div *ngIf="lendersData.length" class="table-responsive data-table">
+    <h1 class="px-5 p-5">Lender Maintenance</h1>
     <div class="p-5 tableFixHead">
       <table class="table table-striped table-hover mb-5">
-        <thead class="bg-white">
-          <tr class="border-0">
-            <th scope="col">Bank Code</th>
+        <thead>
+          <tr>
+            <th>Bank Code</th>
             <td>Display Name</td>
             <td>Type</td>
             <td class="text-center">Commission
@@ -33,14 +33,14 @@
         </thead>
         <tbody class="datatable-body shadow">
           <tr *ngFor="let item of lendersData">
-            <th scope="col">{{item.code}}</th>
+            <th>{{item.code}}</th>
             <td>{{item.name}}</td>
             <td>{{item.type}}</td>
             <td>
               <div class="row">
-                <span class="col">{{item.upfont_commission}}</span>
-                <span class="col">{{item.high_trail_commission}}</span>
-                <span class="col">{{item.low_trail_commission}}</span>
+                <span class="col">%{{item.upfont_commission}}</span>
+                <span class="col">%{{item.high_trail_commission}}</span>
+                <span class="col">%{{item.low_trail_commission}}</span>
               </div>
             </td>
             <td>{{item.balance_multiplier}}</td>

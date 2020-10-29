@@ -2,25 +2,32 @@
   background-color: white;
   width: 96%;
   margin: 3rem auto;
+  border-radius: 10px;
 
   h1 {
     color: green;
   }
 
-  thead {
-    font-size: 1rem;
-    color: grey;
+  .table thead {
+    font-size: 1.1rem;
+    font-weight: bold;
+    th {
+      vertical-align: top;
+      border-bottom: none;
+    }
+    th, td {
+      border-top: none;
+    }
   }
 }
 
-.table thead th {
-  vertical-align: top;
-}
-
-.tableFixHead tbody {
-  display: block;
-  height:30vh;
-  overflow-y:scroll;
+.tableFixHead {
+  border-top: 1px #dee2e6 solid;
+  tbody {
+    display: block;
+    height:30vh;
+    overflow-y:scroll;
+  }
 }
 table thead,
 tbody tr{

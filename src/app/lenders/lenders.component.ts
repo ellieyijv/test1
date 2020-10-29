@@ -19,33 +19,28 @@ export class LendersComponent implements OnInit {
 
   ngOnInit() {
     this.loadingService.requestStarted();
-    setTimeout(() => this.loadingService.requestEnded(), 2000);
     this.loadData();
-
-    //These are the explainations of challenges
-    // axios.get('/user?ID=12345')
-    //   .then(function (response) {
-    //      this.loadData()
-    //   })
-    //   .catch(function (error) {
-    //      //show the retry button
-    //      this.retryButton = ture;
-    //   })
-    //   .then(function () {
-    //      //stop loading
-    //      this.loadingService.requestEnded()
-    //   });
   }
 
   loadData() {
-    this.jsonsService.getJSON().subscribe(data => {
-      let lendersInfo = data.data.filter(value => value.type === 'lenders') || null;
-      if (lendersInfo) {     
-        this.lendersData = lendersInfo.map(item => {
-          return item.attributes;
-        })
-      }
-    })
+    this.jsonsService.getJSON()
+      .subscribe(
+        result => {
+          let lendersInfo = result.data || null;
+          if (lendersInfo) {     
+            this.lendersData = lendersInfo.map(item => {
+              return item.attributes;
+            })
+          }
+        },
+        error => {
+          console.log(error);
+          this.retryButton = true;
+        },
+        () => {
+          this.loadingService.requestEnded();
+        }
+     )
   }
 
   reloadData() {

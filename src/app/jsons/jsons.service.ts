@@ -8,8 +8,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class JsonsService {
 
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => 
-      console.log('data'));
+    // this.getJSON().subscribe(data => 
+    //   console.log('data'));
   }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -28,9 +28,9 @@ export class JsonsService {
 
   public getJSON(): Observable<any> {
     return this.http.get("./assets/lenders.json")
-      .pipe(
-        retry(3),
-        catchError(this.handleError)
-    );
+    //   .pipe(
+    //     retry(1),
+    //     catchError(this.handleError)
+    // );
   }
 }
