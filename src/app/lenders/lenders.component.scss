@@ -4,12 +4,11 @@
   margin: 3rem auto;
   border-radius: 10px;
 
-  h1 {
+  h2 {
     color: green;
   }
 
   .table thead {
-    font-size: 1.1rem;
     font-weight: bold;
     th {
       vertical-align: top;
@@ -25,7 +24,7 @@
   border-top: 1px #dee2e6 solid;
   tbody {
     display: block;
-    height:30vh;
+    height:40vh;
     overflow-y:scroll;
   }
 }
@@ -35,14 +34,21 @@ tbody tr{
     width: 100%;
     table-layout: fixed;
 }
-table tr td:nth-child(2),
-tr td:nth-child(4) {
-  width: 25%;
-}
-tr td:nth-child(3) {
-  width:12%;
-}
+table tr {
+  td:nth-child(2) {
+    width: 20%;
+  }
 
+  td:nth-child(3) {
+    width:11%;
+  }
+
+  td:nth-child(4) {
+    width: 27%;
+  }
+
+ 
+}
 td+td {
   width: auto;
 }

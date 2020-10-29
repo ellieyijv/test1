@@ -9,9 +9,9 @@
   <div style="display:flex;" *ngIf="retryButton">
     <button class="btn btn-primary btn-lg mx-auto m-5" (click)="reloadData()">Retry</button>
   </div>
-  <div *ngIf="lendersData.length" class="table-responsive data-table">
-    <h1 class="px-5 p-5">Lender Maintenance</h1>
-    <div class="p-5 tableFixHead">
+  <div *ngIf="lendersData?.length" class="table-responsive data-table">
+    <h2 class="px-5 my-4 ml-1">Lender Maintenance</h2>
+    <div class="px-5 pt-4 tableFixHead">
       <table class="table table-striped table-hover mb-5">
         <thead>
           <tr>
@@ -19,7 +19,7 @@
             <td>Display Name</td>
             <td>Type</td>
             <td class="text-center">Commission
-              <div class="row text-left">
+              <div class="row text-left pt-3">
                 <span class="col">Upfront</span>
                 <span class="col">Trail High</span>
                 <span class="col">Trail Low</span>
